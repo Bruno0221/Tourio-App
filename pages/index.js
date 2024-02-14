@@ -28,15 +28,10 @@ export default function Home() {
   return (
     <>
       <List role="list">
-        {data.map((place) => {
+        {data.map(({ _id, name, image, location }) => {
           return (
-            <ListItem key={place.id}>
-              <Card
-                name={place.name}
-                image={place.image}
-                location={place.location}
-                id={place.id}
-              />
+            <ListItem key={_id}>
+              <Card name={name} image={image} location={location} id={_id} />
             </ListItem>
           );
         })}
